@@ -1,11 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 
 function App() {
-  const STARTING_TIME = 10;
+  const STARTING_TIME = 5;
   const [textTyped, setTextTyped] = useState("");
   const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
   const [gameStart, setGameStart] = useState(false);
   const [wordCount, setWordCount] = useState(0);
+  const [highScore, setHighScore] = useState(0);
+
   const inputRef = useRef(null);
 
   const handleChange = (event) => {
@@ -18,11 +20,17 @@ function App() {
       e.preventDefault();
       return false;
     });
-  }
+  };
 
   const calculateWordCount = (textTyped) => {
     const wordsArr = textTyped.trim().split(" ");
     return wordsArr.filter((word) => word !== "").length;
+  };
+
+  const calculateHighScore = () => {
+    if (wordCount > highScore) {
+      setHighScore(wordCount);
+    }
   };
 
   const startGame = () => {
@@ -36,6 +44,7 @@ function App() {
   const endGame = () => {
     setGameStart(false);
     setWordCount(calculateWordCount(textTyped));
+    calculateHighScore();
   };
 
   useEffect(() => {
@@ -61,10 +70,11 @@ function App() {
         onFocus={blockPaste}
       />
       <h4>Time Remaining: {timeRemaining}</h4>
+      <h4>Word Count: {wordCount}</h4>
+      <h4>Highscore: {highScore}</h4>
       <button disabled={gameStart} onClick={startGame}>
         Start
       </button>
-      <h4>Word Count: {wordCount}</h4>
     </div>
   );
 }
