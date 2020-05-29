@@ -11,6 +11,15 @@ body {
 
 body {
   font-weight: 400;
+  overflow: hidden;
+}
+
+.App{
+  /* width: 100vw; */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 button {
@@ -42,6 +51,7 @@ textarea {
   height: 200px;
   background: #00b800;
   padding: 10px;
+  font-size: 30px;
 }
 
 textarea:disabled {

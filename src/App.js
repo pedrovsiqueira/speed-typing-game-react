@@ -13,6 +13,13 @@ function App() {
     setTextTyped(value);
   };
 
+  const blockPaste = (event) => {
+    event.target.addEventListener("paste", (e) => {
+      e.preventDefault();
+      return false;
+    });
+  }
+
   const calculateWordCount = (textTyped) => {
     const wordsArr = textTyped.trim().split(" ");
     return wordsArr.filter((word) => word !== "").length;
@@ -51,6 +58,7 @@ function App() {
         disabled={!gameStart}
         onChange={handleChange}
         value={textTyped}
+        onFocus={blockPaste}
       />
       <h4>Time Remaining: {timeRemaining}</h4>
       <button disabled={gameStart} onClick={startGame}>
