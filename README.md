@@ -20,7 +20,7 @@ This game was built to practice Javascript and React.
 
 1. Clone the repo
 ```sh
-git clone https://github.com/pedrovsiqueira/easycooking.git
+git clone https://github.com/pedrovsiqueira/speed-typing-game-react
 ```
 2. Install Yarn packages
 ```sh
