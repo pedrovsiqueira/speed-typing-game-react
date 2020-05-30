@@ -1,68 +1,78 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Speed Typing Game - React
 
-## Available Scripts
 
-In the project directory, you can run:
+## About The Project
+This game was built to practice Javascript and React. 
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![Desktop views](screenshots/search.png)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Built With:
 
-### `yarn test`
+* [Javascript](https://nodejs.org/en/) - Programming language.
+* [ReactJS](https://expressjs.com/pt-br/) - A JavaScript library for building user interfaces.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+<!-- GETTING STARTED -->
+## Getting Started
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Prerequisites
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+In order to run this project locally you will need to the following:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Setup Cloudinary API keys.
+* Setup MongoDB locally or on the cloud.
+* Install Node.js.
+* Create an email address and add the email with the password.
+* Create an account on https://spoonacular.com/food-api and save your personal token.
 
-### `yarn eject`
+Rename the .env-example to .env located on the root of the project add the keys
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+1. Clone the repo
+```sh
+git clone https://github.com/pedrovsiqueira/easycooking.git
+```
+2. Install Yarn packages
+```sh
+yarn
+```
+3. Run the app
+```sh
+yarn start
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<!-- USAGE EXAMPLES -->
+## Usage
 
-## Learn More
+The project is deployed and can be accessed at https://easy-cooking-app.herokuapp.com/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<!-- CONTRIBUTING -->
+## Contributing
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+1. Fork the Project
+2. Create your Feature Branch
+```sh
+git checkout -b feature/AmazingFeature
+```
+3. Commit your Changes
+```sh
+git commit -m 'Add some AmazingFeature'
+```
+4. Push to the Branch
+```sh
+git push origin feature/AmazingFeature
+```
+5. Open a Pull Request
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+<!-- CONTACT -->
+## Contact
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+Pedro Siqueira - [email](mailto:pedro.v.siqueira@gmail.com) - [linkedin](https://www.linkedin.com/in/pedrovsiqueira/)
 
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
