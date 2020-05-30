@@ -5,7 +5,7 @@
 This game was built to practice Javascript and React. 
 
 
-![Desktop views](screenshots/search.png)
+![Desktop views](public/screenshot.png)
 
 ### Built With:
 
