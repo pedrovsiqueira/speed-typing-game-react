@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 
 function App() {
-  const STARTING_TIME = 5;
+  const STARTING_TIME = 20;
   const [textTyped, setTextTyped] = useState("");
   const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
   const [gameStart, setGameStart] = useState(false);
