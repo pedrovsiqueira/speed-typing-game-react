@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from "react";
 
-const useWordGame = (startingTime = 10) => {
+const useWordGame = (startingTime = 3) => {
   const [textTyped, setTextTyped] = useState("");
   const [timeRemaining, setTimeRemaining] = useState(startingTime);
   const [gameStart, setGameStart] = useState(false);
   const [wordCount, setWordCount] = useState(0);
-  const [highScore, setHighScore] = useState(0);
+  var localHighScore = localStorage.getItem("Highscore");
+  const [highScore, setHighScore] = useState(localHighScore);
 
   const inputRef = useRef(null);
 
@@ -45,6 +46,16 @@ const useWordGame = (startingTime = 10) => {
     setWordCount(calculateWordCount(textTyped));
     calculateHighScore();
   };
+
+  useEffect(() => {
+    localStorage.setItem("Highscore", JSON.stringify(highScore));
+  }, [highScore]);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    localHighScore = localStorage.getItem("Highscore");
+    setHighScore(JSON.parse(localHighScore));
+  }, []);
 
   useEffect(() => {
     if (timeRemaining > 0 && gameStart) {
