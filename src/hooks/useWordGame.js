@@ -5,10 +5,33 @@ const useWordGame = (startingTime = 10) => {
   const [timeRemaining, setTimeRemaining] = useState(startingTime);
   const [gameStart, setGameStart] = useState(false);
   const [wordCount, setWordCount] = useState(0);
-  var localHighScore = localStorage.getItem("Highscore");
-  const [highScore, setHighScore] = useState(localHighScore);
-
   const inputRef = useRef(null);
+
+  const [highScore, setHighScore] = useState(() => {
+    const localHighstore = localStorage.getItem("highscore");
+
+    if (localHighstore) {
+      return JSON.parse(localStorage.getItem("highscore"));
+    } else {
+      return 0;
+    }
+  });
+
+  useEffect(() => {
+    localStorage.setItem("highscore", JSON.stringify(highScore));
+  }, [highScore]);
+
+  useEffect(() => {
+    if (timeRemaining > 0 && gameStart) {
+      setWordCount(0);
+      setTimeout(() => {
+        setTimeRemaining((prevState) => prevState - 1);
+      }, 1000);
+    } else if (timeRemaining === 0) {
+      endGame();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gameStart, timeRemaining]);
 
   const handleChange = (event) => {
     const { value } = event.target;
@@ -46,28 +69,6 @@ const useWordGame = (startingTime = 10) => {
     setWordCount(calculateWordCount(textTyped));
     calculateHighScore();
   };
-
-  useEffect(() => {
-    localStorage.setItem("Highscore", JSON.stringify(highScore));
-  }, [highScore]);
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    localHighScore = localStorage.getItem("Highscore");
-    setHighScore(JSON.parse(localHighScore));
-  }, []);
-
-  useEffect(() => {
-    if (timeRemaining > 0 && gameStart) {
-      setWordCount(0);
-      setTimeout(() => {
-        setTimeRemaining((prevState) => prevState - 1);
-      }, 1000);
-    } else if (timeRemaining === 0) {
-      endGame();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [gameStart, timeRemaining]);
 
   return {
     inputRef,
