@@ -34,7 +34,7 @@ yarn start
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The project is deployed and can be accessed at https://easy-cooking-app.herokuapp.com/
+The project is deployed and can be accessed at https://speed-typing-game-react.netlify.app/
 
 
 <!-- CONTRIBUTING -->
