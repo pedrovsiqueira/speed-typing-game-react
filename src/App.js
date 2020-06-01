@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
 import useWordGame from "./hooks/useWordGame";
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
     wordCount,
     highScore,
     startGame,
-  } = useWordGame;
-  
+  } = useWordGame();
+
   return (
     <div className="App">
       <h1>Speed typing game</h1>
