@@ -63,3 +63,7 @@ git push origin feature/AmazingFeature
 
 Pedro Siqueira - [email](mailto:pedro.v.siqueira@gmail.com) - [linkedin](https://www.linkedin.com/in/pedrovsiqueira/)
 
+Thiago Pizzutti - [email](mailto:tpizzutti@gmail.com) - [linkedin](https://www.linkedin.com/in/pedrovsiqueira/)
+
+Fabrício Polato - [email](mailto:fabriciopolato@gmail.com) - [linkedin](https://www.linkedin.com/in/fabriciopolato/)
+
