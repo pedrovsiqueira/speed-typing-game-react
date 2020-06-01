@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 
-const useWordGame = () => {
-  const STARTING_TIME = 20;
+const useWordGame = (startingTime = 10) => {
   const [textTyped, setTextTyped] = useState("");
-  const [timeRemaining, setTimeRemaining] = useState(STARTING_TIME);
+  const [timeRemaining, setTimeRemaining] = useState(startingTime);
   const [gameStart, setGameStart] = useState(false);
   const [wordCount, setWordCount] = useState(0);
   const [highScore, setHighScore] = useState(0);
@@ -35,7 +34,7 @@ const useWordGame = () => {
 
   const startGame = () => {
     setGameStart(true);
-    setTimeRemaining(STARTING_TIME);
+    setTimeRemaining(startingTime);
     setTextTyped("");
     inputRef.current.disabled = false;
     inputRef.current.focus();
@@ -68,8 +67,8 @@ const useWordGame = () => {
     timeRemaining,
     wordCount,
     highScore,
-    startGame
-  }
+    startGame,
+  };
 };
 
 export default useWordGame;
